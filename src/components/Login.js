@@ -50,7 +50,7 @@ const Test = () => {
                         <div className="inputBox">
                         <input type="password" onChange={onChange}  value={credential.password} id="password" name="password" required /><i>Password</i>
                         </div>
-                        <div className="links"><p style={{color:"white"}}>Don't have a Account?&nbsp;&nbsp;</p><Link to="/signup">Signup</Link>
+                        <div className="links"><p style={{color:"white"}}>Don't have an Account?&nbsp;&nbsp;</p><Link to="/signup">Signup</Link>
                         </div>
                         <div className="inputBox">
                             <input type="submit" value="Login" />

@@ -27,10 +27,6 @@ const Navbar = () => {
               <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""} `} to="/about">About</Link>
             </li>
           </ul>
-          { !localStorage.getItem('token') ?<form className="d-flex" role="search">
-          <Link className="btn btn-primary mx-1 " to="/login" role="button">Login</Link>
-          <Link className="btn btn-primary mx-1 " to="/signup" role="button">Signup</Link>
-          </form>: <div><buttons className="btn btn-primary mx-1 " onClick={handleLogout} role="button">Logout</buttons></div>}
         </div>
         {localStorage.getItem('token')&&<Link to="/profile" ><img src={proIcon} style={{width:"50px", marginRight:"10px", marginLeft:"10px" }} /></Link>}
       </div>
