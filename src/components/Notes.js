@@ -22,7 +22,6 @@ const Notes = () => {
   }, [])
 
   const updateNote = (currentNote) => {
-    e.preventDefault();
     ref.current.click();
     setNote({id:currentNote._id ,etitle: currentNote.title, edescription:currentNote.description, etag: currentNote.tag})
   }
@@ -30,6 +29,7 @@ const Notes = () => {
   const refclose = useRef(null);
 
   const handleClick = (e) => {
+    e.preventDefault();
     refclose.current.click();
     editNote(note.id, note.etitle, note.edescription, note.etag);
     showAlert("Updated Succesfully", "success")
