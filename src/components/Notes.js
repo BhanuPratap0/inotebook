@@ -22,6 +22,7 @@ const Notes = () => {
   }, [])
 
   const updateNote = (currentNote) => {
+    e.preventDefault();
     ref.current.click();
     setNote({id:currentNote._id ,etitle: currentNote.title, edescription:currentNote.description, etag: currentNote.tag})
   }
