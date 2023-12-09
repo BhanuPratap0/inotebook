@@ -26,6 +26,8 @@ const Test = () => {
         if(json.success){
             //redirect
             localStorage.setItem('token', json.authToken);
+            localStorage.setItem('email',credential.email);
+            localStorage.setItem('password',credential.password);
             showAlert("Login Success", "success")
             history("/")
         }else{
@@ -48,7 +50,7 @@ const Test = () => {
                         <div class="inputBox">
                         <input type="password" onChange={onChange}  value={credential.password} id="password" name="password" required /><i>Password</i>
                         </div>
-                        <div class="links">  <Link to="/signup">Signup</Link>
+                        <div class="links"><p style={{color:"white"}}>Don't have a Account?&nbsp;&nbsp;</p><Link to="/signup">Signup</Link>
                         </div>
                         <div class="inputBox">
                             <input type="submit" value="Login" />

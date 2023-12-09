@@ -3,19 +3,27 @@ import noteContext from '../context/notes/noteContext'
 import Noteitem from './Noteitem';
 import alertContext from '../context/alert/alertContext';
 import { useNavigate } from 'react-router-dom';
+import userContext from '../context/user/userContext';
 
 const Notes = () => {
   
   
   const context = useContext(noteContext);
+  //notes context
   const { notes, getNotes, editNote } = context;
   const [note, setNote] = useState({ id:"", etitle: "", edescription: "", etag: "default" })
+  //alert context
   const context2=useContext(alertContext);
   const {showAlert}=context2;
+  //user context
+  const context3=useContext(userContext);
+  const {users, getUser}=context3;
+
   let history=useNavigate();
   useEffect(() => {
     if(localStorage.getItem('token')){
       getNotes();
+      getUser();
     }else{
       history("/login")
     }
@@ -77,15 +85,12 @@ const Notes = () => {
             </div>
           </div>
         </div>
-
-
-        <h2>Your Notes</h2>
-        <div className='container' >
+        <div className='container my-5' >
+        <h2>{users.name}'s Notes</h2>
           <div className='row' >
-            
               <center><h1>{notes.length===0 && '****No notes to display!****'}</h1></center>
               {notes.map((note) => {
-                return <div className='col-md-3' key={note._id}><Noteitem updateNote={updateNote} notes={note} /></div>
+                return <div className='col-md-4' key={note._id}><Noteitem updateNote={updateNote} notes={note} /></div>
               })}
             
           </div>

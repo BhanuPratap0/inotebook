@@ -74,10 +74,10 @@ const Signup = () => {
                         <div class="inputBox">
                         <input type="password" id="cpassword" name="cpassword" onChange={onChange} minLength={5} required /><i>Confirm Password</i>
                         </div>
-                        <div class="links"> Already have a Account? <Link to="/login">Login</Link>
+                        <div class="links"><p style={{color:"white"}}>Already have a Account?&nbsp;&nbsp;</p><Link to="/login">Login</Link>
                         </div>
                         <div class="inputBox">
-                            <input type="submit" value="Login" />
+                            <input type="submit" value="Singup" />
                         </div>
                     </form>
                 </div>

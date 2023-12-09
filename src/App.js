@@ -9,10 +9,13 @@ import Signup from './components/Signup';
 import Alert from './components/Alert';
 import Alertstate from './context/alert/Alertstate';
 import Test from './components/Test';
+import UserState from './context/user/UserState';
+import Profile from './components/Profile';
 function App() {
 
   return (
     <>
+    <UserState>
       <NoteState>
       <BrowserRouter>
         <NavBar />
@@ -23,10 +26,12 @@ function App() {
           <Route exact path="/login" element={<Login />} ></Route>
           <Route exact path="/signup" element={<Signup />} ></Route>
           <Route exact path="/test" element={<Test/>} ></Route>
+          <Route exact path="/profile" element={<Profile/>} ></Route>
         </Routes>
         </Alertstate>
       </BrowserRouter>
       </NoteState>
+      </UserState>
     </>
   );
 }

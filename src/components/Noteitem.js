@@ -11,7 +11,7 @@ const Noteitem = (props) => {
     let {notes, updateNote}=props;
     return (
         <div>
-            <div className="card my-4" style={{width:"18rem", boxShadow:'10px 5px 35px black'}}>
+            <div className="card-note my-4" style={{width:"22rem", boxShadow:'10px 5px 35px black'}}>
                 <div className="card-body">
                     <h5 className="card-title">{notes.title}</h5>
                     <h6 className="card-subtitle mb-2 text-body-secondary">{notes.tag}</h6>
