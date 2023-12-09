@@ -22,20 +22,20 @@ const Profile = () => {
     }, [])
     return (
         <div>
-            <div class="container mt-4 mb-4 p-3 d-flex justify-content-center"  >
-                <div class="card p-4" style={{boxShadow:"10px 10px 10px black"}} >
-                    <div class=" image d-flex flex-column justify-content-center align-items-center"> <button
-                        class="btn btn-secondary"> <img src={userLogo} height="100"
-                            width="100" /></button> <span class="name mt-3">{users.name}</span> <span
-                                class="idd"></span>
-                        <div class="d-flex flex-row justify-content-center align-items-center gap-2">  </div>
-                        <div class="d-flex flex-row justify-content-center align-items-center mt-3"> <span class="number">{notes.length} <span
-                            class="follow">Notes</span></span> </div>
-                        <div class=" d-flex mt-2"> 
-                        <button class="btn2 btn-dark"><Link style={{color:"white", textDecoration:"none" }} to="/" >Add Note</Link></button> 
+            <div className="container mt-4 mb-4 p-3 d-flex justify-content-center"  >
+                <div className="card p-4" style={{boxShadow:"10px 10px 10px black"}} >
+                    <div className=" image d-flex flex-column justify-content-center align-items-center"> <button
+                        className="btn btn-secondary"> <img src={userLogo} height="100"
+                            width="100" /></button> <span className="name mt-3">{users.name}</span> <span
+                                className="idd"></span>
+                        <div className="d-flex flex-row justify-content-center align-items-center gap-2">  </div>
+                        <div className="d-flex flex-row justify-content-center align-items-center mt-3"> <span className="number">{notes.length} <span
+                            className="follow">Notes</span></span> </div>
+                        <div className=" d-flex mt-2"> 
+                        <button className="btn2 btn-dark"><Link style={{color:"white", textDecoration:"none" }} to="/" >Add Note</Link></button> 
                         </div>
-                        <div class="text mt-3"> <span> Last Note :<br/> {notes[notes.length-1].description} </span> </div>
-                        <div class=" px-2 rounded mt-4 date "> <span class="join">Joined {new Date(users.date).toDateString()}</span> </div>
+                        <div className="text mt-3"> <span> Last Note :<br/> {notes[notes.length-1].description} </span> </div>
+                        <div className=" px-2 rounded mt-4 date "> <span className="join">Joined {new Date(users.date).toDateString()}</span> </div>
                     </div>
                 </div>
             </div>

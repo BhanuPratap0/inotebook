@@ -40,19 +40,19 @@ const Test = () => {
     }
     return (
         <section>
-            <div class="signin">
-                <div class="content">
+            <div className="signin">
+                <div className="content">
                     <h2>Welcome to iNoteBook</h2>
-                    <form class="form" onSubmit={handleClick} >
-                        <div class="inputBox">
+                    <form className="form" onSubmit={handleClick} >
+                        <div className="inputBox">
                         <input type="email" id="email" name="email"  onChange={onChange} value={credential.email}  required /><i>Email</i>
                         </div>
-                        <div class="inputBox">
+                        <div className="inputBox">
                         <input type="password" onChange={onChange}  value={credential.password} id="password" name="password" required /><i>Password</i>
                         </div>
-                        <div class="links"><p style={{color:"white"}}>Don't have a Account?&nbsp;&nbsp;</p><Link to="/signup">Signup</Link>
+                        <div className="links"><p style={{color:"white"}}>Don't have a Account?&nbsp;&nbsp;</p><Link to="/signup">Signup</Link>
                         </div>
-                        <div class="inputBox">
+                        <div className="inputBox">
                             <input type="submit" value="Login" />
                         </div>
                     </form>

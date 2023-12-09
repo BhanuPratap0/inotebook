@@ -58,25 +58,25 @@ const Signup = () => {
     //     <button type="submit" className="btn btn-primary">Submit</button>
     //   </form>
       <section>
-            <div class="signin">
-                <div class="content">
+            <div className="signin">
+                <div className="content">
                     <h2>iNoteBook Singup</h2>
-                    <form class="form" onSubmit={handleClick} >
-                        <div class="inputBox">
+                    <form className="form" onSubmit={handleClick} >
+                        <div className="inputBox">
                         <input type="text" id="name" name="name" onChange={onChange} required /><i>Name</i>
                         </div>
-                        <div class="inputBox">
+                        <div className="inputBox">
                         <input type="email" id="email" name="email" onChange={onChange} required/><i>Email</i>
                         </div>
-                        <div class="inputBox">
+                        <div className="inputBox">
                         <input type="password" id="password" name="password" onChange={onChange} minLength={5} required /><i>Password</i>
                         </div>
-                        <div class="inputBox">
+                        <div className="inputBox">
                         <input type="password" id="cpassword" name="cpassword" onChange={onChange} minLength={5} required /><i>Confirm Password</i>
                         </div>
-                        <div class="links"><p style={{color:"white"}}>Already have a Account?&nbsp;&nbsp;</p><Link to="/login">Login</Link>
+                        <div className="links"><p style={{color:"white"}}>Already have a Account?&nbsp;&nbsp;</p><Link to="/login">Login</Link>
                         </div>
-                        <div class="inputBox">
+                        <div className="inputBox">
                             <input type="submit" value="Singup" />
                         </div>
                     </form>

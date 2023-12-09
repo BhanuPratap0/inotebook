@@ -22,7 +22,7 @@ const AddNote = () => {
     }
 
     return (
-        <div className="container my-3" style={{boxShadow: "20px 20px 50px black", padding:"25px"}}  >
+        <div className="container add-note my-3" style={{ background:"linear-gradient(90deg, rgba(143,135,135,1) 0%, rgba(195,174,157,1) 0%, rgba(255,255,255,1) 100%)", boxShadow: "20px 20px 50px black", padding:"25px"}}  >
             <center><h2>Add Note</h2></center>
             <form className='my-3'  onSubmit={handleClick} >
                 <div className="mb-3">
@@ -37,7 +37,7 @@ const AddNote = () => {
                     <label htmlFor="exampleFormControlTextarea1" className="form-label">Description</label>
                     <textarea className="form-control" id="description" value={note.description} onChange={onChange} name="description" rows="3" minLength={5} required ></textarea>
                 </div>
-                <button type="submit"  className="btn btn-primary">Add Note</button>
+                <button type="submit"  className="btn btn-dark">Add Note</button>
             </form>
         </div>
     )

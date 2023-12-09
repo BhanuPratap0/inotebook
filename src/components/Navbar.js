@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../logo.jpg'
+import logo from '../logo.png'
 import proIcon from './profile icon.png'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <img className='logo-img'  src={logo} />
+        <img className='logo-img' src={logo} />
         <Link className="navbar-brand" >iNotebook</Link>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -30,8 +30,9 @@ const Navbar = () => {
           { !localStorage.getItem('token') ?<form className="d-flex" role="search">
           <Link className="btn btn-primary mx-1 " to="/login" role="button">Login</Link>
           <Link className="btn btn-primary mx-1 " to="/signup" role="button">Signup</Link>
-          </form>: <div><buttons className="btn btn-primary mx-1 " onClick={handleLogout} role="button">Logout</buttons> <Link to="/profile" ><img src={proIcon} style={{width:"50px", marginRight:"10px", marginLeft:"10px" }} /></Link></div>}
+          </form>: <div><buttons className="btn btn-primary mx-1 " onClick={handleLogout} role="button">Logout</buttons></div>}
         </div>
+        {localStorage.getItem('token')&&<Link to="/profile" ><img src={proIcon} style={{width:"50px", marginRight:"10px", marginLeft:"10px" }} /></Link>}
       </div>
     </nav>
   )
