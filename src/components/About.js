@@ -6,14 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 const About = () => {
   document.body.style.backgroundColor = "#f0ece2";
-  let history = useNavigate();
-  useEffect(() => {
-    if (localStorage.getItem('token')) {
-    } else {
-      history("/login")
-    }
-
-  }, [])
   return (
     <>
       <div className='about-container' >
