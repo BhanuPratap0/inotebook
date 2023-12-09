@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Alert from './components/Alert';
 import Alertstate from './context/alert/Alertstate';
+import Test from './components/Test';
 function App() {
 
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/about" element={<About />} ></Route>
           <Route exact path="/login" element={<Login />} ></Route>
           <Route exact path="/signup" element={<Signup />} ></Route>
+          <Route exact path="/test" element={<Test/>} ></Route>
         </Routes>
         </Alertstate>
       </BrowserRouter>

@@ -3,6 +3,7 @@ import noteContext from '../context/notes/noteContext'
 import alertContext from '../context/alert/alertContext';
 
 const AddNote = () => {
+    document.body.style = 'background: linear-gradient(90deg, rgba(249,249,249,1) 0%, rgba(235,203,174,1) 100%, rgba(143,135,135,0.4654236694677871) 100%);';
     const context = useContext(noteContext);
     const { addNote } = context;
     const context2=useContext(alertContext);
@@ -21,8 +22,8 @@ const AddNote = () => {
     }
 
     return (
-        <div className="container my-3" >
-            <h2>Add Note</h2>
+        <div className="container my-3" style={{boxShadow: "20px 20px 50px black", padding:"25px"}}  >
+            <center><h2>Add Note</h2></center>
             <form className='my-3'  onSubmit={handleClick} >
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Title</label>

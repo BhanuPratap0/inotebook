@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from '../logo.jpg'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 const Navbar = () => {
   let history=useNavigate();
@@ -14,6 +15,7 @@ const Navbar = () => {
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
+        <img className='logo-img'  src={logo} />
         <Link className="navbar-brand" >iNotebook</Link>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
