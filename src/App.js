@@ -11,6 +11,7 @@ import Alertstate from './context/alert/Alertstate';
 import Test from './components/Test';
 import UserState from './context/user/UserState';
 import Profile from './components/Profile';
+import Footer from './components/Footer';
 function App() {
 
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/test" element={<Test/>} ></Route>
           <Route exact path="/profile" element={<Profile/>} ></Route>
         </Routes>
+        <Footer/>
         </Alertstate>
       </BrowserRouter>
       </NoteState>

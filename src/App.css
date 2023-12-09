@@ -67,7 +67,6 @@
 
 section 
 {
-  position: absolute;
   width: 98vw;
   height: 100vh;
   display: flex;
@@ -82,7 +81,6 @@ section .signin
   position: absolute;
   width: 400px;
   background: #222;  
-  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,17 +228,52 @@ input[type="submit"]:active
 /* About-Us page css */
 
 .about-container{
-  font-family: "Times New Roman", Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
   width: auto;
   background-color:#f0ece2;
  
 }
-.about-container .sections{
+.about-container .section-1{
+  display: flex;
+  flex-wrap: wrap;
   padding: 20px;
 }
+.about-container .section-1 .sub-section{
+  box-shadow: 10px 10px 40px #c7b198;
+  text-align: center;
+  width: 23%;
+  margin:10px;
+  background-color: #c7b198;
+  padding: 20px;
+}
+ 
+.about-container .section-3{
+  border-radius: 20px;
+  background-color: #dfd3c3;
+  box-shadow: 10px 10px 40px #dfd3c3;
+  padding: 20px;
+  margin: 20px;
+}
+.about-container .section{
+  border-radius: 20px;
+  box-shadow: 10px 10px 40px #dfd3c3;
+  padding: 20px;
+  background-color: #dfd3c3;
+  width: 46.9%;
+  margin: 20px;
+}
+@media (max-width: 600px){
+  .about-container .section{
+    width: 100%;
+  }
+  .about-container .section-1 .sub-section{
+  width: 100%;
+  }
+}
 .about-container p{
-  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
 }
 .about-container h1::before {
   content: "";
