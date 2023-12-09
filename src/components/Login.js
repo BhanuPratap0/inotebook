@@ -20,10 +20,11 @@ const Login = () => {
         console.log(json);
         if(json.success){
             //redirect
-            localStorage.setItem('token', json.authtoken);
+            localStorage.setItem('token', json.authToken);
             showAlert("Login Success", "success")
             history("/")
         }else{
+            localStorage.removeItem('token')
             showAlert("Invalid Credential", "danger")
         }
     }

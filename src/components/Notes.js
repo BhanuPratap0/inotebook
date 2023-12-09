@@ -2,23 +2,28 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../context/notes/noteContext'
 import Noteitem from './Noteitem';
 import alertContext from '../context/alert/alertContext';
+import { useNavigate } from 'react-router-dom';
 
 const Notes = () => {
+  
+  
   const context = useContext(noteContext);
   const { notes, getNotes, editNote } = context;
   const [note, setNote] = useState({ id:"", etitle: "", edescription: "", etag: "default" })
   const context2=useContext(alertContext);
   const {showAlert}=context2;
-
+  let history=useNavigate();
   useEffect(() => {
-    getNotes();
-    // eslint-disable-next-line
+    if(localStorage.getItem('token')){
+      getNotes();
+    }else{
+      history("/login")
+    }
   }, [])
 
   const updateNote = (currentNote) => {
     ref.current.click();
     setNote({id:currentNote._id ,etitle: currentNote.title, edescription:currentNote.description, etag: currentNote.tag})
-    showAlert("Updated Successfully!", "success")
   }
   const ref = useRef(null);
   const refclose = useRef(null);
@@ -27,10 +32,10 @@ const Notes = () => {
     refclose.current.click();
     editNote(note.id, note.etitle, note.edescription, note.etag);
     showAlert("Updated Succesfully", "success")
-    
 }
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value })
+    
 }
 
   return (

@@ -12,8 +12,9 @@ const AddNote = () => {
     const handleClick = (e) => {
         e.preventDefault();
         addNote(note.title, note.description, note.tag);
-        showAlert("Note Added Successfully!","success")
         setNote({title:"", description:"", tag:""});
+        showAlert("Note Added Successfully!","success")
+        
     }
     const onChange = (e) => {
         setNote({ ...note, [e.target.name]: e.target.value })

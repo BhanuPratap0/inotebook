@@ -22,9 +22,8 @@ const Signup = () => {
         console.log(json);
         if(json.success){
             //redirect
-            localStorage.setItem('token', json.authtoken);
             showAlert("Signup Successfully","success")
-            history("/")
+            history("/login")
         }else{
             showAlert("Invalid Credentials","danger")
         }
