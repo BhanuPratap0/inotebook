@@ -45,7 +45,7 @@ const Notes = (props) => {
     e.preventDefault();
     refclose.current.click();
     editNote(note.id, note.etitle, note.edescription, note.etag);
-    showAlert("Updated Succesfully", "success")
+    toast.success("Updated Successfully!",{autoClose: 1000,hideProgressBar: true,});
 }
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value })
