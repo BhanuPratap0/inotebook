@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const About = (props) => {
+  document.body.style.backgroundImage = `url()`;
   document.body.style.backgroundColor = "#f0ece2";
   props.handleProgress(50);
   props.handleProgress(100);
@@ -49,14 +50,7 @@ const About = (props) => {
         </div>
         </div>
 
-        <div className='section-3'>
-          <center><h2><b>Privacy and Security</b></h2></center>
-        <hr></hr>
-        <br />
-        <p>We take your privacy seriously. iNoteBook employs robust security measures to protect your data, ensuring that your notes are yours and yours alone. Our commitment is to provide you with a safe and confidential space for your thoughts.</p>
-        </div>
-
-        <div className='section-3'>
+        <div className='section-3'  >
         <center><h2><b>Get Started</b></h2></center>
         <hr></hr>
         <br />
