@@ -4,7 +4,7 @@ import banner from './banner.jpg'
 import alertContext from '../context/alert/alertContext';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Test = () => {
+const Login = (props) => {
     document.body.style.backgroundImage = `url(${logo})`;
     document.body.style.backgroundSize = "cover";
 
@@ -13,6 +13,7 @@ const Test = () => {
     const [credential, setCredential]= useState({email: "", password: ""})
     let history=useNavigate();
     const handleClick = async(e) => {
+        props.handleProgress(20);
         e.preventDefault();
         const response = await fetch(`https://inotebookbackend-zolh.onrender.com/api/auth/login`, {
             method: "POST",
@@ -21,7 +22,9 @@ const Test = () => {
             },
             body: JSON.stringify({email:credential.email, password: credential.password }),
         });
+        props.handleProgress(50);
         const json = await response.json();
+        props.handleProgress(100);
         console.log(json);
         if(json.success){
             //redirect
@@ -62,4 +65,4 @@ const Test = () => {
     )
 }
 
-export default Test
+export default Login

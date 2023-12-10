@@ -2,12 +2,12 @@ import React from 'react'
 import AddNote from './AddNote';
 import Notes from './Notes';
 
-const Home = () => {
+const Home = (props) => {
   
   return (
     <>
-      <AddNote/>
-      <Notes/>
+      <AddNote handleProgress={props.handleProgress} />
+      <Notes handleProgress={props.handleProgress} />
     </>
   )
 }

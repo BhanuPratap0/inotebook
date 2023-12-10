@@ -5,7 +5,7 @@ import alertContext from '../context/alert/alertContext';
 import { useNavigate } from 'react-router-dom';
 import userContext from '../context/user/userContext';
 
-const Notes = () => {
+const Notes = (props) => {
   
   
   const context = useContext(noteContext);
@@ -22,8 +22,10 @@ const Notes = () => {
   let history=useNavigate();
   useEffect(() => {
     if(localStorage.getItem('token')){
+      props.handleProgress(50);
       getNotes();
       getUser();
+      props.handleProgress(100);
     }else{
       history("/login")
     }
