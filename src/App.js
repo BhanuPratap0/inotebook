@@ -16,7 +16,7 @@ import AllNotes from './components/AllNotes';
 import LoadingBar from 'react-top-loading-bar';
 import { useState } from 'react';
 function App() {
-  const [progress, setProgress]=useState('10')
+  const [progress, setProgress]=useState('0')
   const handleProgress=(progress)=>{
     setProgress(progress)
   }
@@ -34,12 +34,12 @@ function App() {
         <Alertstate><Alert />
         <Routes>
           <Route exact path="/" element={<Home handleProgress={handleProgress} />} ></Route>
-          <Route exact path="/about" element={<About />} ></Route>
+          <Route exact path="/about" element={<About handleProgress={handleProgress} />} ></Route>
           <Route exact path="/login" element={<Login  handleProgress={handleProgress} />} ></Route>
-          <Route exact path="/signup" element={<Signup />} ></Route>
+          <Route exact path="/signup" element={<Signup handleProgress={handleProgress} />} ></Route>
           <Route exact path="/test" element={<Test/>} ></Route>
-          <Route exact path="/profile" element={<Profile/>} ></Route>
-          <Route exact path="/allnotes" element={<AllNotes/>} ></Route>
+          <Route exact path="/profile" element={<Profile handleProgress={handleProgress} />} ></Route>
+          <Route exact path="/allnotes" element={<AllNotes handleProgress={handleProgress} />} ></Route>
         </Routes>
         <Footer/>
         </Alertstate>

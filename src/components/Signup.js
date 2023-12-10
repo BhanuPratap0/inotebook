@@ -3,16 +3,20 @@ import { Link, useNavigate } from 'react-router-dom'
 import alertContext from '../context/alert/alertContext';
 import logo from './bg.jpg'
 
-const Signup = () => {
+const Signup = (props) => {
   document.body.style.backgroundImage = `url(${logo})`;
   document.body.style.backgroundSize = "cover";
   const context2=useContext(alertContext);
   const {showAlert}=context2;
   const [credential, setCredential]= useState({name:"",email: "", password: "",cpassword:""})
     let history=useNavigate();
+
+    props.handleProgress(0);
+
     const handleClick = async(e) => {
         e.preventDefault();
         const {name,email,password}=credential;
+        props.handleProgress(20);
         const response = await fetch(`https://inotebookbackend-zolh.onrender.com/api/auth/createuser`, {
             method: "POST",
             headers: {
@@ -20,7 +24,9 @@ const Signup = () => {
             },
             body: JSON.stringify({name,email,password}),
         });
+        props.handleProgress(50);
         const json = await response.json();
+        props.handleProgress(100);
         console.log(json);
         if(json.success){
             //redirect

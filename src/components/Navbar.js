@@ -11,7 +11,7 @@ const Navbar = () => {
 
   }
   return (
-    <nav className="navbar navbar-expand-lg" data-bs-theme="dark" style={{backgroundColor:"#7b3c3c",fontSize: "20px"}} >
+    <nav className="navbar fixed-top navbar-expand-lg navbar-fixed-top " data-bs-theme="dark" style={{backgroundColor:"#7b3c3c",fontSize: "20px"}} >
       <div className="container-fluid">
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>

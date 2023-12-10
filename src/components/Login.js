@@ -7,7 +7,6 @@ import { Link, useNavigate } from 'react-router-dom';
 const Login = (props) => {
     document.body.style.backgroundImage = `url(${logo})`;
     document.body.style.backgroundSize = "cover";
-
     const context=useContext(alertContext);
     const {showAlert}=context;
     const [credential, setCredential]= useState({email: "", password: ""})

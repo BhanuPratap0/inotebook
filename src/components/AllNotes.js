@@ -4,19 +4,21 @@ import Noteitem from './Noteitem';
 import noteContext from '../context/notes/noteContext';
 import userContext from '../context/user/userContext';
 
-const AllNotes = () => {
+const AllNotes = (props) => {
     const context = useContext(noteContext);
     const { notes, getNotes, editNote } = context;
     const [note, setNote] = useState({ id: "", etitle: "", edescription: "", etag: "default" })
 
     const context3=useContext(userContext);
     const {users, getUser}=context3;
-
+    
     let history = useNavigate();
     useEffect(() => {
         if (localStorage.getItem('token')) {
             getNotes();
+            props.handleProgress(50);
             getUser();
+            props.handleProgress(100);
         } else {
             history("/login")
         }
