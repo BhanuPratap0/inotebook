@@ -4,6 +4,8 @@ import Noteitem from './Noteitem';
 import alertContext from '../context/alert/alertContext';
 import { useNavigate } from 'react-router-dom';
 import userContext from '../context/user/userContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Notes = (props) => {
   
@@ -22,6 +24,7 @@ const Notes = (props) => {
   let history=useNavigate();
   useEffect(() => {
     if(localStorage.getItem('token')){
+      
       props.handleProgress(50);
       getNotes();
       getUser();
@@ -81,9 +84,6 @@ const Notes = (props) => {
                   <button type="submit"  className="btn btn-primary">Update Note</button>
                 </form>
               </div>
-              <div className="modal-footer">
-                
-              </div>
             </div>
           </div>
         </div>
@@ -98,6 +98,7 @@ const Notes = (props) => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   )
 }

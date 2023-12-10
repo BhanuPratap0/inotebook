@@ -3,6 +3,8 @@ import logo from './bg.jpg'
 import banner from './banner.jpg'
 import alertContext from '../context/alert/alertContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = (props) => {
     document.body.style.backgroundImage = `url(${logo})`;
@@ -34,6 +36,7 @@ const Login = (props) => {
             history("/")
         }else{
             localStorage.removeItem('token')
+            toast.error('Invalid Credential',{autoClose: 1000,hideProgressBar: true,})
             showAlert("Invalid Credential", "danger")
         }
     }
@@ -41,6 +44,7 @@ const Login = (props) => {
         setCredential({ ...credential, [e.target.name]: e.target.value })
     }
     return (
+        <>
         <section>
             <div className="signin">
                 <div className="content">
@@ -61,6 +65,8 @@ const Login = (props) => {
                 </div>
             </div>
         </section>
+        <ToastContainer />
+        </>
     )
 }
 

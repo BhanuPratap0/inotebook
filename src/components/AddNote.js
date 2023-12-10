@@ -1,20 +1,21 @@
 import React, { useContext, useState } from 'react'
 import noteContext from '../context/notes/noteContext'
 import alertContext from '../context/alert/alertContext';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const AddNote = () => {
     document.body.style = 'background: linear-gradient(90deg, rgba(249,249,249,1) 0%, rgba(235,203,174,1) 100%, rgba(143,135,135,0.4654236694677871) 100%);';
     const context = useContext(noteContext);
     const { addNote } = context;
     const context2=useContext(alertContext);
     const {alert, showAlert}=context2;
-    const [note, setNote] = useState({ title: "", description: "", tag: "" })
+    const [note, setNote] = useState({ title: "", description: "", tag: "General" })
 
     const handleClick = (e) => {
         e.preventDefault();
         addNote(note.title, note.description, note.tag);
         setNote({title:"", description:"", tag:""});
-        showAlert("Note Added Successfully!","success")
+        toast.success("Note Added Successfully!",{autoClose: 1000,hideProgressBar: true,});
         
     }
     const onChange = (e) => {
@@ -22,6 +23,7 @@ const AddNote = () => {
     }
 
     return (
+        <>
         <div className="container add-note my-3" style={{ background:"linear-gradient(90deg, rgba(143,135,135,1) 0%, rgba(195,174,157,1) 0%, rgba(255,255,255,1) 100%)", boxShadow: "20px 20px 50px black", padding:"25px"}}  >
             <center><h2>Add Note</h2></center>
             <form className='my-3'  onSubmit={handleClick} >
@@ -40,6 +42,8 @@ const AddNote = () => {
                 <button type="submit"  className="btn btn-dark">Add Note</button>
             </form>
         </div>
+        <ToastContainer />
+        </>
     )
 }
 

@@ -31,7 +31,7 @@ function App() {
         //onLoaderFinished={() => handleProgress(0)}
       />
         <NavBar />
-        <Alertstate><Alert />
+        <Alertstate>
         <Routes>
           <Route exact path="/" element={<Home handleProgress={handleProgress} />} ></Route>
           <Route exact path="/about" element={<About handleProgress={handleProgress} />} ></Route>
