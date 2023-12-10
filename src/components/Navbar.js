@@ -17,7 +17,7 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <img className='logo-img' src={logo} />
-        <Link className="navbar-brand" >iNotebook</Link>
+        <Link className="navbar-brand" to="/">iNotebook</Link>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             {localStorage.getItem('token') ?<li className="nav-item">
