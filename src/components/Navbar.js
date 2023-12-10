@@ -24,7 +24,7 @@ const Navbar = () => {
               <Link className={`nav-link ${location.pathname === "/" ? "active" : ""} `} to="/">Home</Link>
             </li>:null}
             {localStorage.getItem('token') ?<li className="nav-item">
-              <Link className={`nav-link ${location.pathname === "/allnotes" ? "active" : ""} `} to="/allnotes">ALl Notea</Link>
+              <Link className={`nav-link ${location.pathname === "/allnotes" ? "active" : ""} `} to="/allnotes">ALl Notes</Link>
             </li>:null}
             <li className="nav-item">
               <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""} `} to="/about">About</Link>
