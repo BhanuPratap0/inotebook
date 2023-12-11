@@ -35,7 +35,7 @@ const Profile = () => {
                         <div className=" d-flex mt-2"> 
                         <button className="btn2 btn-dark"><Link style={{color:"white", textDecoration:"none" }} to="/" >Add Note</Link></button> 
                         </div>
-                        <div className="text mt-3"> <span> Last Note :<br/> {notes[notes.length-1].description} </span> </div>
+                        <div className="text mt-3"> <span> Last Note :<br/> {notes.length>0&&notes[notes.length-1].description} </span> </div>
                         <div className=" px-2 rounded mt-4 date "> <span className="join">Joined {new Date(users.date).toDateString()}</span> </div>
                     </div>
                 </div>
