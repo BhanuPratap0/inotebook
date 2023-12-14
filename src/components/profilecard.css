@@ -77,3 +77,39 @@ hr .new1 {
 .date {
     background-color: #ccc
 }
+
+
+.profile-pic label,button {
+	display: block;
+	width: 120px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: slateblue;
+	border-radius: 2px;
+	font-size: 1em;
+	line-height: 2.5em;
+	text-align: center;
+    color: white;
+}
+
+.profile-pic label:hover {
+	background-color: cornflowerblue;
+}
+.profile-pic button:hover {
+	background-color: cornflowerblue;
+}
+
+.profile-pic label:active {
+	background-color: mediumaquamarine;
+}
+
+.profile-pic input {
+	border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px; 
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+

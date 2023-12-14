@@ -16,8 +16,9 @@ const AddNote = () => {
         addNote(note.title, note.description, note.tag);
         setNote({title:"", description:"", tag:""});
         toast.success("Note Added Successfully!",{autoClose: 1000,hideProgressBar: true,});
-        
+        setNote({title: "", description: "", tag: "General"})
     }
+    
     const onChange = (e) => {
         setNote({ ...note, [e.target.name]: e.target.value })
     }

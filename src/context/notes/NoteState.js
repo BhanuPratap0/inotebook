@@ -3,9 +3,21 @@ import NoteContext from "./noteContext";
 
 
 const NoteState = (props) => {
-  const host = "https://inotebookbackend-zolh.onrender.com"
+  const host = "http://localhost:5000"
   const n1 = []
   const [notes, setNotes] = useState(n1)
+
+  
+  const uploadImage = async (formData) => {
+    const response = await fetch(`http://localhost:5000/api/notes/image`, {
+      method: "PUT",
+      headers: {
+        "auth-token": localStorage.getItem('token')
+      },
+      body: formData,
+    });
+    const result = await response.json();
+  }
 
   //Get note
   const getNotes = async () => {
@@ -16,8 +28,7 @@ const NoteState = (props) => {
         "auth-token": localStorage.getItem('token')
       }
     });
-    const json =  await response.json();
-    console.log(json);
+    const json = await response.json();
     setNotes(json);
   }
   //Add note
@@ -32,11 +43,10 @@ const NoteState = (props) => {
       body: JSON.stringify({ title, description, tag }),
     });
     const note = await response.json();
-    
     setNotes(notes.concat(note));
   }
   //Delete Note
-  const deleteNote = async(id) => {
+  const deleteNote = async (id) => {
     //API Call 
     const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
       method: "DELETE",
@@ -47,7 +57,6 @@ const NoteState = (props) => {
       body: JSON.stringify(),
     });
     const json = response.json();
-    console.log("deleting the note with id:" + id)
     const newNote = notes.filter((note) => { return note._id !== id });
     setNotes(newNote)
   }
@@ -64,7 +73,7 @@ const NoteState = (props) => {
       body: JSON.stringify({ title, description, tag }),
     });
     //const json= response.json();
-    let newNote= JSON.parse(JSON.stringify(notes));
+    let newNote = JSON.parse(JSON.stringify(notes));
     //Logic to edit in client
     for (let index = 0; index < notes.length; index++) {
       const element = newNote[index];
@@ -79,7 +88,7 @@ const NoteState = (props) => {
   }
 
   return (
-    <NoteContext.Provider value={{ notes, setNotes, addNote, editNote, deleteNote, getNotes }}>
+    <NoteContext.Provider value={{ notes, setNotes, addNote, editNote, deleteNote, getNotes, uploadImage}}>
       {props.children}
     </NoteContext.Provider>
   )

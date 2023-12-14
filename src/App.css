@@ -1,5 +1,5 @@
 body{
-  margin-top: 180px;
+  margin-top: 80px;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -74,10 +74,6 @@ section
   overflow: hidden;
 }
 
-@media (max-width: 600px){
-  section{} 
-}
-
 section .signin
 {
   position: absolute;
@@ -90,6 +86,17 @@ section .signin
   border-radius: 4px;
   box-shadow: 0 15px 35px rgba(0,0,0,9);
 }
+
+@media (max-width: 600px){
+  section{
+    width: 100%;
+  }
+  section .signin{
+    width: 370px;
+  }
+}
+
+
 section .signin .content 
 {
   position: relative;

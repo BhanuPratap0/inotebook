@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter,Route, Routes } from "react-router-dom";
 import NavBar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
@@ -15,6 +15,7 @@ import Footer from './components/Footer';
 import AllNotes from './components/AllNotes';
 import LoadingBar from 'react-top-loading-bar';
 import { useState } from 'react';
+import Form from './components/Form'
 function App() {
   const [progress, setProgress]=useState('0')
   const handleProgress=(progress)=>{
@@ -29,9 +30,10 @@ function App() {
         color='#f11946'
         progress={progress}
         //onLoaderFinished={() => handleProgress(0)}
-      />
+      /> <Alertstate>
         <NavBar />
-        <Alertstate>
+       
+        <Alert/>
         <Routes>
           <Route exact path="/" element={<Home handleProgress={handleProgress} />} ></Route>
           <Route exact path="/about" element={<About handleProgress={handleProgress} />} ></Route>
@@ -40,6 +42,7 @@ function App() {
           <Route exact path="/test" element={<Test/>} ></Route>
           <Route exact path="/profile" element={<Profile handleProgress={handleProgress} />} ></Route>
           <Route exact path="/allnotes" element={<AllNotes handleProgress={handleProgress} />} ></Route>
+          <Route exact path="/form" element={<Form/>} ></Route>
         </Routes>
         <Footer/>
         </Alertstate>

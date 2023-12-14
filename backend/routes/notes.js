@@ -3,6 +3,42 @@ const router = express.Router();
 const fetchuser = require('../middleware/fetchuser');
 const { body, validationResult } = require('express-validator');
 const Note = require('../models/Note');
+const multer = require('multer');
+const Profile = require('../models/Profile')
+const path = require("path");
+const User = require('../models/User')
+const fs = require('fs'); 
+
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '../src/components/images')
+    },
+    filename: function (req, file, cb) {
+        const uniqueSuffix = Date.now();
+        cb(null, uniqueSuffix + file.originalname);
+    }
+})
+
+const upload = multer({ storage: storage })
+
+router.post("/image", fetchuser, upload.single("image"), async (req, res) => {
+    console.log(req.body);
+    const imageName=req.file.filename;
+    const user= await User.findById(req.user.id);
+    
+    if(user.avatar){
+        fs.unlinkSync("../src/components/images/"+ user.avatar);
+        user.avatar=imageName;
+        user.save();
+        return;
+    }
+
+    user.avatar=imageName;
+    user.save();
+    res.json({status:"ok"})
+})
+
 
 //ROUTE:1 get all the notes using GET ; GET "/api/notes.fetchallnotes". Login Req
 router.get('/fetchallnotes', fetchuser, async (req, res) => {
