@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import UserContext from './userContext'
 
 const UserState = (props) => {
-  const host = "https://inotebookbackend-zolh.onrender.com";
+  const host = "https://inotebook-en1z.onrender.com";
     const u1=[];
     const [users, setUsers] = useState(u1);
 

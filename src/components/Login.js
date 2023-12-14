@@ -16,7 +16,7 @@ const Login = (props) => {
     const handleClick = async(e) => {
         props.handleProgress(20);
         e.preventDefault();
-        const response = await fetch(`https://inotebookbackend-zolh.onrender.com/api/auth/login`, {
+        const response = await fetch(`https://inotebook-en1z.onrender.com/api/auth/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

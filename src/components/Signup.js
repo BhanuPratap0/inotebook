@@ -22,7 +22,7 @@ const Signup = (props) => {
         e.preventDefault();
         const { name, email, password,avatar } = credential;
         props.handleProgress(20);
-        const response = await fetch(`https://inotebookbackend-zolh.onrender.com/api/auth/createuser`, {
+        const response = await fetch(`https://inotebook-en1z.onrender.com/api/auth/createuser`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

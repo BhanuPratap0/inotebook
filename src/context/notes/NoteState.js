@@ -3,13 +3,13 @@ import NoteContext from "./noteContext";
 
 
 const NoteState = (props) => {
-  const host = "https://inotebookbackend-zolh.onrender.com"
+  const host = "https://inotebook-en1z.onrender.com"
   const n1 = []
   const [notes, setNotes] = useState(n1)
 
   
   const uploadImage = async (formData) => {
-    const response = await fetch(`https://inotebookbackend-zolh.onrender.com/api/notes/image`, {
+    const response = await fetch(`https://inotebook-en1z.onrender.com/api/notes/image`, {
       method: "PUT",
       headers: {
         "auth-token": localStorage.getItem('token')
